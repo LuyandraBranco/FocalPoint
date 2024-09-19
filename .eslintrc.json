@@ -1,3 +1,26 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/stylistic"
+  ],
+  "plugins": ["@stylistic/js", "@typescript-eslint/eslint-plugin"],
+  "rules": {
+    "no-console": ["error", { "allow": ["error"] }],
+    "no-unused-vars": ["error"],
+    "no-unused-labels": ["error"],
+    "@typescript-eslint/no-explicit-any": 0,
+    "@stylistic/js/semi": ["error", "always"],
+    "@stylistic/js/indent": ["error", 2],
+    "@stylistic/js/key-spacing": ["error", {
+      "afterColon": true
+    }],
+    "@stylistic/js/keyword-spacing": ["error", {
+      "before": true
+    }],
+    "@stylistic/js/comma-dangle": "error",
+    "@stylistic/js/quotes": ["error", "single"],
+    "@stylistic/js/jsx-quotes": ["error", "prefer-double"]
+  }
 }
