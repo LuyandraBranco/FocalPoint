@@ -1,0 +1,27 @@
+// cores
+$primary-color: #0796D3; 
+$secondary-color: #53C0F0; 
+$accent-color: #D30707; 
+$background-color: #F7F9FD; 
+$text-color: #101828;
+
+// gradientes
+$linear-gradient-primary: linear-gradient(100%, #0796D3, #53C0F0);
+$linear-gradient-accent: linear-gradient(100%, #D30707, #F05353);
+$background-light: #D7DDE9; 
+$background-white: #FFFFFF; 
+$background-grey: #EAECF0; 
+$background-dark: #000000; 
+$accent-light: #A0DCF6; 
+
+// pesos de fonte
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+
+// breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
