@@ -4,6 +4,8 @@ $secondary-color: #53C0F0;
 $accent-color: #D30707; 
 $background-color: #F7F9FD; 
 $text-color: #101828;
+$text-black: #000000;
+$text-black-transparent: rgba($text-black, 0.54);
 
 // gradientes
 $linear-gradient-primary: linear-gradient(100%, #0796D3, #53C0F0);
@@ -14,6 +16,15 @@ $background-grey: #EAECF0;
 $background-dark: #000000; 
 $accent-light: #A0DCF6; 
 
+// tamanhos de fonte
+$font-size-xs: 0.75rem; // 12px
+$font-size-sm: 0.875rem; // 14px
+$font-size-md: 1rem; // 16px
+$font-size-lg: 1.125rem; // 18px
+$font-size-xl: 1.25rem; // 20px
+$font-size-xxl: 1.5rem; // 24px
+$font-size-xxxl: 2rem; // 32px
+
 // pesos de fonte
 $font-weight-regular: 400;
 $font-weight-medium: 500;
@@ -21,6 +32,7 @@ $font-weight-bold: 700;
 
 
 // breakpoints
+$breakpoint-xs: 480px;
 $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;

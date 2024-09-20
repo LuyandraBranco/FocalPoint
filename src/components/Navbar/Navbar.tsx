@@ -5,7 +5,7 @@ export function Navbar() {
     <nav className={styles.navbar}>
       <div className={styles["navbar-logo"]}>
         <img src="/Logomark.svg" />
-        <h1>FocalPoint</h1>
+        <img src="/Logotype.svg" />
       </div>
       <div className={styles["nav-greetings-container"]}>
         <h2>Bem-vindo de volta, Marcus</h2>
