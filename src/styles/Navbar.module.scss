@@ -5,33 +5,10 @@
     height: 3.5rem;
     margin-top: 1.5rem;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 0 0 24px 0;
     border-bottom: 1px solid $background-light;
-
-    @media screen and (max-width: $breakpoint-sm) {
-        width: 17rem;
-        height: 7.125rem;
-        flex-direction: column;
-    }
-}
-
-.navbar-logo {
-    width: 30%;
-    display: flex;
-    gap: 1rem;
-
-    @media screen and (max-width: $breakpoint-sm) {
-        width: 100%;
-        justify-content: start;
-    }
-}
-
-.nav-greetings-container {
-    width: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
     h2 {
         color: $text-black;
@@ -44,24 +21,24 @@
         }
     }
 
-    @media screen and (max-width: $breakpoint-sm) {
-        width: 100%;
-        justify-content: start;
-    }
-}
-
-.navbar-date {
-    width: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-
     p {
         color: $text-black-transparent;
         line-height: 19.36px;
         font-size: $font-size-md;
         font-weight: $font-weight-regular;
     }
+
+    @media screen and (max-width: $breakpoint-sm) {
+        width: 17rem;
+        height: 7.125rem;
+        flex-direction: column;
+    }
+}
+
+.navbar-logo {
+    width: 20%;
+    display: flex;
+    gap: 1rem;
 
     @media screen and (max-width: $breakpoint-sm) {
         width: 100%;
