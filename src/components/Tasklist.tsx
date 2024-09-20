@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 import styles from "../styles/Tasklist.module.scss";
 import { Task } from "./Task";
@@ -56,8 +56,15 @@ export function Tasklist() {
       </Modal>
       
       <Modal isOpen={isDeleteModalOpen} title="Deletar tarefa">
-        <>
-        </>
+        <div className={stylesModal["delete-container"]}>
+          <p>Tem certeza que você deseja deletar essa tarefa?</p>
+          <div className={stylesModal["buttons-actions-container"]}>
+            <button onClick={closeCreateModal} className={stylesModal.closeButton}>
+              Cancelar
+            </button>
+            <button type="submit" className={stylesModal.deleteButton}>Deletar</button>
+          </div>
+        </div>
       </Modal>
     </section>
   );
