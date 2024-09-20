@@ -110,6 +110,8 @@ export function Tasklist() {
               type="text"
               placeholder="Digite"
               id="title"
+              required
+              minLength={5}
               value={newTaskTitle}
               onChange={(e) => setNewTaskTitle(e.target.value)}
             />
