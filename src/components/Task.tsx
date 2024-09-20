@@ -2,7 +2,6 @@ import { TaskType } from "@/@types/TaskType";
 import { FiTrash } from "react-icons/fi";
 import styles from "../styles/Task.module.scss";
 
-
 interface TaskProps {
   task: TaskType;
   onDelete: (taskId: number) => void;
