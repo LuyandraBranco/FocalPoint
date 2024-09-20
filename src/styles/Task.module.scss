@@ -9,4 +9,30 @@
     gap: 16px;
     border: 1px dashed $background-light;
     margin-bottom: 1rem;
+    &:hover {
+        background: $background-color;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+}
+
+.description-task {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    input[type='checkbox'] {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+
+.btn-delete {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    >svg {
+        color: $background-gray-100;
+        font-size: $font-size-xxl;
+    }
 }
