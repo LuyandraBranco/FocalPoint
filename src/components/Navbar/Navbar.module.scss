@@ -8,12 +8,23 @@
     align-items: center;
     padding: 0 0 24px 0;
     border-bottom: 1px solid $background-light;
+
+    @media screen and (max-width: $breakpoint-sm) {
+        width: 17rem;
+        height: 7.125rem;
+        flex-direction: column;
+    }
 }
 
 .navbar-logo {
     width: 30%;
     display: flex;
     gap: 1rem;
+
+    @media screen and (max-width: $breakpoint-sm) {
+        width: 100%;
+        justify-content: start;
+    }
 }
 
 .nav-greetings-container {
@@ -24,9 +35,18 @@
 
     h2 {
         color: $text-black;
-        font-size: 24px;
+        font-size: $font-size-xxl;
         line-height: 29.04px;
         font-weight: $font-weight-medium;
+
+        @media screen and (max-width: $breakpoint-sm) {
+            font-size: $font-size-md;
+        }
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+        width: 100%;
+        justify-content: start;
     }
 }
 
@@ -37,9 +57,14 @@
     justify-content: end;
 
     p {
-        color: #0000008a;
+        color: $text-black-transparent;
         line-height: 19.36px;
-        font-size: 1rem;
+        font-size: $font-size-md;
         font-weight: $font-weight-regular;
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+        width: 100%;
+        justify-content: start;
     }
 }
