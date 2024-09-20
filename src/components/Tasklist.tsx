@@ -6,13 +6,14 @@ import {
   deleteTask,
   toggleTaskCompletion,
 } from "../utils/storage";
+import { TaskType } from "@/@types/TaskType";
 import styles from "../styles/Tasklist.module.scss";
 import { Task } from "./Task";
 import { Modal } from "./Modal";
 import stylesModal from "../styles/Modal.module.scss";
 
 export function Tasklist() {
-  const [tasks, setTasks] = useState<any[]>([]);
+  const [tasks, setTasks] = useState<TaskType[]>([]);
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [taskToDelete, setTaskToDelete] = useState<number | null>(null);
@@ -22,9 +23,9 @@ export function Tasklist() {
     setTasks(getTasks());
   }, []);
 
-  const handleAddTask = (e: any) => {
+  const handleAddTask = (e: React.FormEvent) => {
     e.preventDefault();
-    const newTask = {
+    const newTask: TaskType = {
       id: Math.random(),
       title: newTaskTitle,
       completed: false,
@@ -109,7 +110,6 @@ export function Tasklist() {
               type="text"
               placeholder="Digite"
               id="title"
-              required
               value={newTaskTitle}
               onChange={(e) => setNewTaskTitle(e.target.value)}
             />
