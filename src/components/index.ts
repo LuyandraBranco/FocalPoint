@@ -1,1 +1,2 @@
-export { Navbar } from "./Navbar/Navbar";
+export { Navbar } from "./Navbar";
+export { Tasklist } from "./Tasklist";

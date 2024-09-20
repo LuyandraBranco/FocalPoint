@@ -1,0 +1,35 @@
+@import "./variables.scss";
+
+.tasklist {
+    width: 28.125rem;
+    height: 50%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.tasklist-elements-container {
+    width: 28.125rem;
+    height: 27.875rem;
+    border: 1px solid $background-grey;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    padding: 24px;
+    gap: 24px;
+    margin-bottom: 1.5rem;
+}
+
+.button-create {
+    width: 28.125rem;
+    height: 3.1875rem;
+    background: $linear-gradient-primary;
+    font-size: $font-size-md;
+    color: $text-white;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
