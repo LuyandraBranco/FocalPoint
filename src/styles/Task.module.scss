@@ -1,0 +1,12 @@
+@import "./variables.scss";
+
+.task-container {
+    width: 24.125;
+    height: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 8px;
+    padding: 16px;
+    gap: 16px;
+    border: 1px dashed $background-light;
+}
