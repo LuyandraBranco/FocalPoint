@@ -2,7 +2,7 @@
 
 Focalpoint é uma aplicação de lista de tarefas (todo list) desenvolvida com Next.js, utilizando create-next-app. Esta aplicação permite criar tarefas, marcá-las como feitas e deletá-las.
 
-![alt text](image.png)
+![alt text](./public/image.png)
 
 ## Tecnologias Usadas
 
@@ -26,6 +26,6 @@ bun dev
 ```
 Abra http://localhost:3000 no seu navegador para ver o resultado.
 ## Projecto
-![alt text](image-1.png) </br>
-![alt text](image-2.png) </br>
-![alt text](image-3.png)
+![alt text](./public/image-1.png) </br>
+![alt text](./public/image-2.png) </br>
+![alt text](./public/image-3.png)
