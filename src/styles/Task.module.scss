@@ -7,6 +7,7 @@
     justify-content: space-between;
     border-radius: 8px;
     padding: 1rem;
+    overflow: hidden;
     gap: 16px;
     border: 1px dashed $background-light;
     margin-bottom: 1rem;
@@ -25,13 +26,13 @@
     align-items: center;
     gap: 13px;
 
-    // span {
-    //     display: inline-block;
-    //     max-width: 100px; 
-    //     overflow: hidden;
-    //     text-overflow: ellipsis;
-    // }
-
+    span {
+        display: inline-block;
+        max-width: 120px;
+        max-height: 4rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 
     input[type="checkbox"] {
         width: 1.5rem;
