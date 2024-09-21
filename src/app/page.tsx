@@ -1,4 +1,5 @@
-import { Navbar, TaskList } from "@/components";
+import { Navbar } from "@/components/Navbar";
+import { TaskList } from "@/components/TaskList";
 import styles from "../styles/page.module.scss";
 
 export default function Home() {
