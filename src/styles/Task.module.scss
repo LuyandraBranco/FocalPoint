@@ -8,10 +8,10 @@
     align-items: center;
     border-radius: 8px;
     padding: 1rem;
-    overflow: hidden;
     gap: 16px;
     border: 1px dashed $background-light;
     margin-bottom: 1rem;
+    overflow-x: hidden;
 
     &:hover {
         background: $background-color;
@@ -35,7 +35,7 @@
         font-size: $font-size-md;
 
         @media screen and (max-width: $breakpoint-sm) {
-            max-width: 150px;
+            max-width: 130px;
         }
     }
 
