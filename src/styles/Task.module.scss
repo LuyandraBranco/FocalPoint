@@ -32,6 +32,7 @@
         max-height: 4rem;
         overflow: hidden;
         text-overflow: ellipsis;
+        font-size: $font-size-md;
 
         @media screen and (max-width: $breakpoint-sm) {
             max-width: 120px;
