@@ -52,6 +52,7 @@
 
         &:checked + span {
             text-decoration: line-through;
+            color: $backgroud-gray-600;
         }
     }
 }
