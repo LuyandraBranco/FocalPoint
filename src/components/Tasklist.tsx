@@ -62,34 +62,45 @@ export function Tasklist() {
     setIsDeleteModalOpen(false);
   };
 
+  const tasksTodo = tasks.filter((task) => !task.completed);
+  const tasksDone = tasks.filter((task) => task.completed);
+
   return (
     <section className={styles.tasklist}>
       <div className={styles["tasklist-elements-container"]}>
         <div className={styles["tasklist-todo"]}>
           <p>Suas tarefas de hoje</p>
-          {tasks
-            .filter((task) => !task.completed)
-            .map((task) => (
+          {tasksTodo.length > 0 ? (
+            tasksTodo.map((task) => (
               <Task
                 key={task.id}
                 task={task}
                 onDelete={openDeleteModal}
                 onToggleCompletion={handleToggleCompletion}
               />
-            ))}
+            ))
+          ) : (
+            <span className={styles.emptyMessage}>
+              Lista vazia, adicione a sua tarefa.
+            </span>
+          )}
         </div>
         <div className={styles["tasklist-done"]}>
           <p>Tarefas finalizadas</p>
-          {tasks
-            .filter((task) => task.completed)
-            .map((task) => (
+          {tasksDone.length > 0 ? (
+            tasksDone.map((task) => (
               <Task
                 key={task.id}
                 task={task}
                 onDelete={openDeleteModal}
                 onToggleCompletion={handleToggleCompletion}
               />
-            ))}
+            ))
+          ) : (
+            <span className={styles.emptyMessage}>
+              Sem tarefas feitas no momento.
+            </span>
+          )}
         </div>
       </div>
       <button

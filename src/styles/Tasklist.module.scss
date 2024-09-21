@@ -32,7 +32,8 @@
     }
 }
 
-.tasklist-todo {
+.tasklist-todo,
+.tasklist-done {
     width: 100%;
     height: auto;
     display: flex;
@@ -46,18 +47,11 @@
     }
 }
 
-.tasklist-done {
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-
-    p {
-        font-size: $font-size-md;
-        margin-bottom: 1.5rem;
-        color: $text-black-transparent;
-    }
+.emptyMessage {
+    text-align: center;
+    color: $text-color;
+    font-size: $font-size-md;
+    margin-bottom: 2rem;
 }
 
 .button-create {
