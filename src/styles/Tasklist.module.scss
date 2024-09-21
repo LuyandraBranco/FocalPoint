@@ -35,7 +35,7 @@
 .tasklist-todo,
 .tasklist-done {
     width: 100%;
-    height: auto;
+    max-height: 48%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -45,6 +45,15 @@
         margin-bottom: 1.5rem;
         color: $text-black-transparent;
     }
+}
+
+.list {
+    width: 100%;
+    max-height: 90%;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .emptyMessage {

@@ -70,37 +70,41 @@ export function Tasklist() {
       <div className={styles["tasklist-elements-container"]}>
         <div className={styles["tasklist-todo"]}>
           <p>Suas tarefas de hoje</p>
-          {tasksTodo.length > 0 ? (
-            tasksTodo.map((task) => (
-              <Task
-                key={task.id}
-                task={task}
-                onDelete={openDeleteModal}
-                onToggleCompletion={handleToggleCompletion}
-              />
-            ))
-          ) : (
-            <span className={styles.emptyMessage}>
-              Lista vazia, adicione a sua tarefa.
-            </span>
-          )}
+          <div className={styles.list}>
+            {tasksTodo.length > 0 ? (
+              tasksTodo.map((task) => (
+                <Task
+                  key={task.id}
+                  task={task}
+                  onDelete={openDeleteModal}
+                  onToggleCompletion={handleToggleCompletion}
+                />
+              ))
+            ) : (
+              <span className={styles.emptyMessage}>
+                Lista vazia, adicione a sua tarefa.
+              </span>
+            )}
+          </div>
         </div>
         <div className={styles["tasklist-done"]}>
           <p>Tarefas finalizadas</p>
-          {tasksDone.length > 0 ? (
-            tasksDone.map((task) => (
-              <Task
-                key={task.id}
-                task={task}
-                onDelete={openDeleteModal}
-                onToggleCompletion={handleToggleCompletion}
-              />
-            ))
-          ) : (
-            <span className={styles.emptyMessage}>
-              Sem tarefas feitas no momento.
-            </span>
-          )}
+          <div className={styles.list}>
+            {tasksDone.length > 0 ? (
+              tasksDone.map((task) => (
+                <Task
+                  key={task.id}
+                  task={task}
+                  onDelete={openDeleteModal}
+                  onToggleCompletion={handleToggleCompletion}
+                />
+              ))
+            ) : (
+              <span className={styles.emptyMessage}>
+                Sem tarefas feitas no momento.
+              </span>
+            )}
+          </div>
         </div>
       </div>
       <button
