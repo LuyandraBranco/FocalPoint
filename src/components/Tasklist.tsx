@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { getTasks, addTask, deleteTask, toggleTaskCompletion } from "../utils/storage";
 import { TaskType } from "@/@types/TaskType";
 import { Modal } from "./Modal";
-
 import styles from "../styles/Tasklist.module.scss";
 import { DeleteModal } from "./DeleteModal";
 import { TaskForm } from "./TaskForm";
