@@ -11,7 +11,7 @@
     gap: 16px;
     border: 1px dashed $background-light;
     margin-bottom: 1rem;
-    overflow-x: hidden;
+    overflow: hidden;
 
     &:hover {
         background: $background-color;
