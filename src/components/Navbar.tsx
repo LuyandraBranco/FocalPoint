@@ -1,6 +1,12 @@
+import { format } from "date-fns";
+import { ptBR } from "date-fns/locale";
 import styles from "../styles/Navbar.module.scss";
+import { formatDate } from "@/utils/date";
 
 export function Navbar() {
+  const today: Date = new Date();
+  const formattedDate: string = formatDate(today);
+  
   return (
     <nav className={styles.navbar}>
       <div className={styles["navbar-logo"]}>
@@ -11,7 +17,7 @@ export function Navbar() {
         <h2>Bem-vindo de volta, Marcus</h2>
       </div>
       <div className={styles["navbar-date"]}>
-        <p>Segunda, 01 de dezembro de 2025</p>
+      <p>{formattedDate}</p>
       </div>
     </nav>
   );
