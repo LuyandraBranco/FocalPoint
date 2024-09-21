@@ -8,7 +8,7 @@ import { DeleteModal } from "./DeleteModal";
 import { TaskForm } from "./TaskForm";
 import { TaskSection } from "./TaskSection";
 
-export function Tasklist() {
+export function TaskList() {
   const [tasks, setTasks] = useState<TaskType[]>([]);
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
