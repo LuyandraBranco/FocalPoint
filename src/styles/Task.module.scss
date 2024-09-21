@@ -28,10 +28,14 @@
 
     span {
         display: inline-block;
-        max-width: 120px;
+        max-width: 280px;
         max-height: 4rem;
         overflow: hidden;
         text-overflow: ellipsis;
+
+        @media screen and (max-width: $breakpoint-sm) {
+            max-width: 120px;
+        }
     }
 
     input[type="checkbox"] {
