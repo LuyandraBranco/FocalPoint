@@ -33,7 +33,6 @@ export function Modal({ isOpen, title, children, onClose }: ModalProps) {
       onClose();
     }
   };
-
   return (
     <div
       className={styles.modalOverlay}
