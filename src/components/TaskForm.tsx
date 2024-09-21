@@ -12,6 +12,7 @@ export function TaskForm({ onAddTask, onClose }: TaskFormProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (newTaskTitle.trim() === "") return;
     const newTask: TaskType = {
       id: Math.random(),
       title: newTaskTitle,
@@ -35,10 +36,15 @@ export function TaskForm({ onAddTask, onClose }: TaskFormProps) {
           maxLength={80}
           value={newTaskTitle}
           onChange={(e) => setNewTaskTitle(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleSubmit(e);
+            }
+          }}
         />
       </div>
       <div className={styles["buttons-actions-container"]}>
-        <button onClick={onClose} className={styles.closeButton}>
+        <button type="button" onClick={onClose} className={styles.closeButton}>
           Cancelar
         </button>
         <button type="submit" className={styles.addButton}>
