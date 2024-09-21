@@ -11,7 +11,7 @@
     @media screen and (max-width: $breakpoint-sm) {
         width: 80%;
         margin-top: 1.9rem;
-        height: auto;
+        height: calc(100vh - 7.125rem);
     }
 }
 
@@ -47,6 +47,10 @@
         font-size: $font-size-md;
         margin-bottom: 1.5rem;
         color: $text-black-transparent;
+    }
+
+    @media screen and (max-width: $breakpoint-xs) {
+        max-height: 47.5%;
     }
 }
 
