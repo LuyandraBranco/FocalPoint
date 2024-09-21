@@ -1,4 +1,4 @@
-import { Navbar, Tasklist } from "@/components";
+import { Navbar, TaskList } from "@/components";
 import styles from "../styles/page.module.scss";
 
 export default function Home() {
@@ -6,7 +6,7 @@ export default function Home() {
     <div className={styles["home-container"]}>
       <Navbar />
       <main className={styles["tasklist-container"]}>
-        <Tasklist />
+        <TaskList />
       </main>
     </div>
   );

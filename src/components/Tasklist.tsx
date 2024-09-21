@@ -1,46 +1,35 @@
 "use client";
 import { useState, useEffect } from "react";
-import {
-  getTasks,
-  addTask,
-  deleteTask,
-  toggleTaskCompletion,
-} from "../utils/storage";
+import { getTasks, addTask, deleteTask, toggleTaskCompletion } from "../utils/storage";
 import { TaskType } from "@/@types/TaskType";
-import styles from "../styles/Tasklist.module.scss";
-import { Task } from "./Task";
 import { Modal } from "./Modal";
-import stylesModal from "../styles/Modal.module.scss";
 
-export function Tasklist() {
+import styles from "../styles/Tasklist.module.scss";
+import { DeleteModal } from "./DeleteModal";
+import { TaskForm } from "./TaskForm";
+import { TaskSection } from "./TaskSection";
+
+export function TaskList() {
   const [tasks, setTasks] = useState<TaskType[]>([]);
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [taskToDelete, setTaskToDelete] = useState<number | null>(null);
-  const [newTaskTitle, setNewTaskTitle] = useState("");
 
   useEffect(() => {
     setTasks(getTasks());
   }, []);
 
-  const handleAddTask = (e: React.FormEvent) => {
-    e.preventDefault();
-    const newTask: TaskType = {
-      id: Math.random(),
-      title: newTaskTitle,
-      completed: false,
-    };
+  const handleAddTask = (newTask: TaskType) => {
     addTask(newTask);
     setTasks(getTasks());
-    setNewTaskTitle("");
-    closeCreateModal();
   };
 
   const handleDeleteTask = () => {
     if (taskToDelete !== null) {
       deleteTask(taskToDelete);
       setTasks(getTasks());
-      closeDeleteModal();
+      setTaskToDelete(null);
+      setIsDeleteModalOpen(false);
     }
   };
 
@@ -51,15 +40,9 @@ export function Tasklist() {
 
   const openCreateModal = () => setIsCreateModalOpen(true);
   const closeCreateModal = () => setIsCreateModalOpen(false);
-
   const openDeleteModal = (taskId: number) => {
     setTaskToDelete(taskId);
     setIsDeleteModalOpen(true);
-  };
-
-  const closeDeleteModal = () => {
-    setTaskToDelete(null);
-    setIsDeleteModalOpen(false);
   };
 
   const tasksTodo = tasks.filter((task) => !task.completed);
@@ -68,102 +51,35 @@ export function Tasklist() {
   return (
     <section className={styles.tasklist}>
       <div className={styles["tasklist-elements-container"]}>
-        <div className={styles["tasklist-todo"]}>
-          <p>Suas tarefas de hoje</p>
-          <div className={styles.list}>
-            {tasksTodo.length > 0 ? (
-              tasksTodo.map((task) => (
-                <Task
-                  key={task.id}
-                  task={task}
-                  onDelete={openDeleteModal}
-                  onToggleCompletion={handleToggleCompletion}
-                />
-              ))
-            ) : (
-              <span className={styles.emptyMessage}>
-                Lista vazia, adicione a sua tarefa.
-              </span>
-            )}
-          </div>
-        </div>
-        <div className={styles["tasklist-done"]}>
-          <p>Tarefas finalizadas</p>
-          <div className={styles.list}>
-            {tasksDone.length > 0 ? (
-              tasksDone.map((task) => (
-                <Task
-                  key={task.id}
-                  task={task}
-                  onDelete={openDeleteModal}
-                  onToggleCompletion={handleToggleCompletion}
-                />
-              ))
-            ) : (
-              <span className={styles.emptyMessage}>
-                Sem tarefas feitas no momento.
-              </span>
-            )}
-          </div>
-        </div>
+        <TaskSection
+          title="Suas tarefas de hoje"
+          tasks={tasksTodo}
+          onToggleCompletion={handleToggleCompletion}
+          onDelete={openDeleteModal}
+          emptyMessage="Lista vazia, adicione a sua tarefa."
+        />
+        <TaskSection
+          title="Tarefas finalizadas"
+          tasks={tasksDone}
+          onToggleCompletion={handleToggleCompletion}
+          onDelete={openDeleteModal}
+          emptyMessage="Sem tarefas feitas no momento."
+        />
       </div>
-      <button
-        type="submit"
-        className={styles["button-create"]}
-        onClick={openCreateModal}
-      >
+
+      <button className={styles["button-create"]} onClick={openCreateModal}>
         Adicionar nova tarefa
       </button>
-      <Modal isOpen={isCreateModalOpen} title="Nova tarefa">
-        <form
-          className={stylesModal["form-container"]}
-          onSubmit={handleAddTask}
-        >
-          <div className={stylesModal["form-group"]}>
-            <label htmlFor="title">Título</label>
-            <input
-              type="text"
-              placeholder="Digite"
-              id="title"
-              required
-              minLength={5}
-              value={newTaskTitle}
-              onChange={(e) => setNewTaskTitle(e.target.value)}
-            />
-          </div>
-          <div className={stylesModal["buttons-actions-container"]}>
-            <button
-              onClick={closeCreateModal}
-              className={stylesModal.closeButton}
-            >
-              Cancelar
-            </button>
-            <button type="submit" className={stylesModal.addButton}>
-              Adicionar
-            </button>
-          </div>
-        </form>
+
+      <Modal isOpen={isCreateModalOpen} title="Nova tarefa" onClose={closeCreateModal}>
+        <TaskForm onAddTask={handleAddTask} onClose={closeCreateModal} />
       </Modal>
 
-      <Modal isOpen={isDeleteModalOpen} title="Deletar tarefa">
-        <div className={stylesModal["delete-container"]}>
-          <p>Tem certeza que você deseja deletar essa tarefa?</p>
-          <div className={stylesModal["buttons-actions-container"]}>
-            <button
-              onClick={closeDeleteModal}
-              className={stylesModal.closeButton}
-            >
-              Cancelar
-            </button>
-            <button
-              onClick={handleDeleteTask}
-              className={stylesModal.deleteButton}
-            >
-              Deletar
-            </button>
-          </div>
-        </div>
-      </Modal>
+      <DeleteModal
+        isOpen={isDeleteModalOpen}
+        onDelete={handleDeleteTask}
+        onClose={() => setIsDeleteModalOpen(false)}
+      />
     </section>
   );
 }
