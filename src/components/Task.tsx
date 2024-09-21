@@ -16,8 +16,8 @@ export function Task({ task, onDelete, onToggleCompletion }: TaskProps) {
           type="checkbox"
           checked={task.completed}
           onChange={() => onToggleCompletion(task.id)}
-        />{" "}
-        {task.title}
+        />
+        <span>{task.title}</span>
       </div>
       <button
         className={styles["btn-delete"]}
