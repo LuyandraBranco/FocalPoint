@@ -33,7 +33,7 @@ export function TaskForm({ onAddTask, onClose }: TaskFormProps) {
           placeholder="Digite"
           required
           minLength={5}
-          maxLength={80}
+          maxLength={50}
           value={newTaskTitle}
           onChange={(e) => setNewTaskTitle(e.target.value)}
           onKeyDown={(e) => {

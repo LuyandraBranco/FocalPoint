@@ -29,7 +29,8 @@
 
     @media screen and (max-width: $breakpoint-sm) {
         padding: 2rem;
-        min-height: 26.75rem;
+        max-height: 26.75rem;
+        overflow: auto;
     }
 }
 
