@@ -1,6 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
-import { getTasks, addTask, deleteTask, toggleTaskCompletion } from "../utils/storage";
+import {
+  getTasks,
+  addTask,
+  deleteTask,
+  toggleTaskCompletion,
+} from "../utils/storage";
 import { TaskType } from "@/@types/TaskType";
 import { Modal } from "./Modal";
 import styles from "../styles/Tasklist.module.scss";
@@ -70,7 +75,11 @@ export function TaskList() {
         Adicionar nova tarefa
       </button>
 
-      <Modal isOpen={isCreateModalOpen} title="Nova tarefa" onClose={closeCreateModal}>
+      <Modal
+        isOpen={isCreateModalOpen}
+        title="Nova tarefa"
+        onClose={closeCreateModal}
+      >
         <TaskForm onAddTask={handleAddTask} onClose={closeCreateModal} />
       </Modal>
 
