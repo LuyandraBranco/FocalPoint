@@ -23,7 +23,7 @@ export function Task({ task, onDelete, onToggleCompletion }: TaskProps) {
         className={styles["btn-delete"]}
         onClick={() => onDelete(task.id)}
       >
-        <FiTrash />
+        <FiTrash className={styles["icon-trash"]}/>
       </button>
     </div>
   );

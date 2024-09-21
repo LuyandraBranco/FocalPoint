@@ -57,6 +57,9 @@
 }
 
 .btn-delete {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
     border: none;
     background: transparent;
     cursor: pointer;
@@ -65,4 +68,8 @@
         color: $background-gray-100;
         font-size: $font-size-xxl;
     }
+}
+
+.icon-trash {
+    stroke-width: 1.33;
 }
