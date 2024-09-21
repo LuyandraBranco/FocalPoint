@@ -26,12 +26,11 @@
     cursor: pointer;
 
     @media screen and (max-width: $breakpoint-sm) {
-        width: 44%;
         margin-bottom: 0.6rem;
     }
 
     @media screen and (max-width: $breakpoint-xs) {
-        width: 55%;
+        width: 50%;
         margin-bottom: 0.6rem;
     }
 }
